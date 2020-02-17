@@ -1,0 +1,13 @@
+logging:  level:    org.springframework.web.client.RestTemplate: trace
+    
+aws:
+  cognito:
+    clientId: 000
+    poolId: us-east-2_**
+    endpoint: cognito-idp.us-east-1.amazonaws.com
+    region: us-east-2
+    identityPoolId: us_east_2:***
+    developerGroup: developers
+    connectionTimeout: 2000
+    readTimeout: 2000
+    httpHeader: Authorization

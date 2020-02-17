@@ -1,0 +1,14 @@
+.gradle
+.settings
+build/
+gradle/
+!**/src/main/**
+!**/src/test/**
+
+.classpath
+.factorypath
+.springBeans
+.sts4-cache
+
+*.class
+default

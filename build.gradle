@@ -1,0 +1,58 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.daci'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	developmentOnly
+//	compile.exclude module: "spring-boot-starter-tomcat"
+//	compile.exclude group: "io.lettuce", module: "lettuce-core"
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	// Web & REST
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	//compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+	//compile 'com.github.zhanhb:thymeleaf-layout-dialect:2.4.1'
+	
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+//    implementation 'commons-httpclient:commons-httpclient:3.1'
+    implementation 'com.nimbusds:nimbus-jose-jwt:4.23'
+//    implementation 'commons-lang:commons-lang:2.6'
+//    implementation 'com.amazonaws:aws-java-sdk:1.11.360'
+    implementation 'com.amazonaws:aws-java-sdk-core:1.11.360'
+    implementation 'com.amazonaws:aws-java-sdk-cognitoidp:1.11.360'
+
+//    implementation 'org.yaml:snakeyaml:1.19'
+//    implementation 'org.springframework.boot:spring-boot-configuration-processor:2.0.3.RELEASE'
+//    implementation 'org.passay:passay:1.0'
+
+	implementation 'org.springframework.boot:spring-boot-starter-undertow'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'	
+
+}
+
+apply plugin: 'eclipse'
+
+eclipse {
+    project {
+        name = 'SpringAwsCognito'
+    }
+}
